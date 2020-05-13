@@ -6,8 +6,6 @@ public abstract class Fruit {
     public Fruit(Float fruitWt) {
         this.fruitWt = fruitWt;
     }
-
-
     public Float getFruitWt() {
         return fruitWt;
     }
