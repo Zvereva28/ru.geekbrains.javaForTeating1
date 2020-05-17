@@ -9,5 +9,6 @@ public class AppDataTests {
     public void appDataTest1() {
         AppData appData = new AppData("file.txt");
         appData.printAllData();
+        appData.allDataToFile("NewFile.txt");
     }
 }

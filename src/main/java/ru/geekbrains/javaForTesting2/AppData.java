@@ -36,6 +36,29 @@ public class AppData {
         }
     }
 
+    public void allDataToFile(String fileName) {
+        try (PrintWriter out = new PrintWriter(fileName)) {
+            String headerFile = this.header[0];// достаем, что лежит в hedere склеиваем в строку и записываем
+            for (int i = 1; i < this.header.length; i++) {
+                headerFile = headerFile + ";";
+                headerFile = headerFile + this.header[i];
+            }
+            out.println(headerFile);// записываем
+            System.out.println(this.data.length);
+            for (int i = 0; i < this.data.length; i++) {
+                String data = String.valueOf(this.data[i][0]);
+                for (int j = 1; j < this.header.length; j++) {//достаем данныей из data и склеиваем в строку
+                    data = data + ";";
+                    data = data + this.data[i][j];
+                }
+                out.println(data);// записываем
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void printAllData(){
         for(String title: header){
         System.out.print(title + "  ");}
