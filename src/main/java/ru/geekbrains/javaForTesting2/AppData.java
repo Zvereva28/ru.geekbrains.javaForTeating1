@@ -20,8 +20,9 @@ public class AppData {
 
             while ((str = reader.readLine()) != null) {
                 if (str.split(";").length !=header.length){
-                    System.out.println("Не корректные данные");// разобраться с исключением, передалать!!!!
-                    break;}
+                    throw new IOException("Не корректные данные в файле");
+                    //System.out.println("Не корректные данные");// разобраться с исключением, передалать!!!!
+                    }
                dataList.add(str.split(";"));
             }
         } catch (IOException e) {
